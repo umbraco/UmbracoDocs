@@ -208,7 +208,7 @@ The Multi Node Tree Picker (`Umbraco.MultiNodeTreePicker`) is deprecated and is 
 
 Use the dedicated [Document Picker](../../model-your-content/property-editors/built-in-umbraco-property-editors/document-picker.md), [Media Picker](../../model-your-content/property-editors/built-in-umbraco-property-editors/media-picker-3.md) and [Member Picker](../../model-your-content/property-editors/built-in-umbraco-property-editors/member-picker.md) instead. These now support dynamic roots, multiple items, and member type filters.
 
-To show deprecated property editors in the backoffice, set `Umbraco:CMS:DataTypes:ShowDeprecatedPropertyEditors` to `true`. This setting has moved from the `Content` section. See [Data Types Settings](../../develop-with-umbraco/configuration/datatypes.md).
+To show deprecated property editors in the backoffice, set `Umbraco:CMS:DataTypes:OfferDeprecatedPropertyEditors` to `true`. This setting was previously `Umbraco:CMS:Content:ShowDeprecatedPropertyEditors`. See [Data Types Settings](../../develop-with-umbraco/configuration/datatypes.md).
 
 See [#23853](https://github.com/umbraco/Umbraco-CMS/pull/23853).
 
@@ -338,7 +338,7 @@ Some settings have moved, been removed, or have new default values. Review your 
 | Setting                                                     | Change                                 | Action                                                                                                                                                        |
 | ----------------------------------------------------------- | -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `Umbraco:CMS:Core:Debug`                                    | No longer read.                        | Move the settings to [`Umbraco:CMS:Debug`](../../develop-with-umbraco/configuration/debugsettings.md).                                                        |
-| `Umbraco:CMS:Content:ShowDeprecatedPropertyEditors`         | No longer read.                        | Move it to [`Umbraco:CMS:DataTypes:ShowDeprecatedPropertyEditors`](../../develop-with-umbraco/configuration/datatypes.md).                                    |
+| `Umbraco:CMS:Content:ShowDeprecatedPropertyEditors`         | No longer read.                        | Rename and move it to [`Umbraco:CMS:DataTypes:OfferDeprecatedPropertyEditors`](../../develop-with-umbraco/configuration/datatypes.md).                       |
 | `Umbraco:CMS:Content:AllowEditInvariantFromNonDefault`      | Removed.                               | Use the user group permission. See [User group permission for editing shared content](version-specific.md#user-group-permission-for-editing-shared-content).  |
 | `Umbraco:CMS:HelpPage`                                      | Removed.                               | Remove the section.                                                                                                                                           |
 | `Umbraco:CMS:Indexing:ExplicitlyIndexEachNestedProperty`    | Removed.                               | Remove the setting.                                                                                                                                           |

@@ -188,18 +188,7 @@ Property Editor UI manifests define how property editors appear and behave in th
 
 ### 7. Content and Document Pickers
 
-#### [Content Picker](../../../../../model-your-content/property-editors/built-in-umbraco-property-editors/content-picker.md)
-
-* **Alias:** `Umb.PropertyEditorUi.ContentPicker`
-* **Icon:** `icon-page-add`
-* **Group:** `pickers`
-* **Schema:** `Umbraco.MultiNodeTreePicker`
-* **Read-only Support:** ✅
-* **Location:** `/packages/property-editors/content-picker/manifests.ts`
-* **Settings:**
-  * `filter` - Filter by content type
-
-#### [Document Picker](../../../../../model-your-content/property-editors/built-in-umbraco-property-editors/document-picker.md)
+#### [Single Document Picker](../../../../../model-your-content/property-editors/built-in-umbraco-property-editors/document-picker.md#single-document-picker)
 
 * **Alias:** `Umb.PropertyEditorUi.DocumentPicker`
 * **Icon:** `icon-document`
@@ -208,9 +197,38 @@ Property Editor UI manifests define how property editors appear and behave in th
 * **Read-only Support:** ✅
 * **Location:** `/packages/documents/documents/property-editors/document-picker/manifests.ts`
 * **Settings:**
+  * `allowedContentTypes` - Limit to specific Document Types
   * `startNodeId` - Set start node
+  * `dynamicRoot` - Resolve the start node from the content being edited
 
-#### [Multi URL Picker](../../../../../model-your-content/property-editors/built-in-umbraco-property-editors/multi-url-picker.md)
+#### [Document Picker](../../../../../model-your-content/property-editors/built-in-umbraco-property-editors/document-picker.md#document-picker-multiple)
+
+* **Alias:** `Umb.PropertyEditorUi.DocumentPicker.Multiple`
+* **Icon:** `icon-documents`
+* **Group:** `pickers`
+* **Schema:** `Umbraco.DocumentPicker.Multiple`
+* **Read-only Support:** ✅
+* **Location:** `/packages/documents/documents/property-editors/multiple-document-picker/manifests.ts`
+* **Settings:**
+  * `allowedContentTypes` - Limit to specific Document Types
+  * `validationLimit` - Minimum and maximum number of items
+  * `startNodeId` - Set start node
+  * `dynamicRoot` - Resolve the start node from the content being edited
+
+#### [Single URL Picker](../../../../../model-your-content/property-editors/built-in-umbraco-property-editors/url-picker.md#single-url-picker)
+
+* **Alias:** `Umb.PropertyEditorUi.UrlPicker.Single`
+* **Icon:** `icon-link`
+* **Group:** `pickers`
+* **Schema:** `Umbraco.UrlPicker.Single`
+* **Read-only Support:** ✅
+* **Location:** `/packages/multi-url-picker/property-editor/manifests.ts`
+* **Settings:**
+  * `overlaySize` - Overlay size
+  * `hideAnchor` - Hide anchor/query string input
+  * `allowCultureSpecificDocumentLinks` - Allow culture-specific document links
+
+#### [URL Picker](../../../../../model-your-content/property-editors/built-in-umbraco-property-editors/url-picker.md#url-picker-multiple)
 
 * **Alias:** `Umb.PropertyEditorUi.MultiUrlPicker`
 * **Icon:** `icon-link`
@@ -221,13 +239,35 @@ Property Editor UI manifests define how property editors appear and behave in th
 * **Settings:**
   * `overlaySize` - Overlay size
   * `hideAnchor` - Hide anchor/query string input
+  * `allowCultureSpecificDocumentLinks` - Allow culture-specific document links
+
+#### [Multi Node Tree Picker](../../../../../model-your-content/property-editors/built-in-umbraco-property-editors/content-picker.md)
+
+* **Alias:** `Umb.PropertyEditorUi.ContentPicker`
+* **Icon:** `icon-page-add`
+* **Group:** `pickers`
+* **Schema:** `Umbraco.MultiNodeTreePicker`
+* **Read-only Support:** ✅
+* **Deprecated:** Hidden from the property editor picker unless [`OfferDeprecatedPropertyEditors`](../../../../../develop-with-umbraco/configuration/datatypes.md#offerdeprecatedpropertyeditors) is enabled. Use the Document, Media or Member pickers instead.
+* **Location:** `/packages/property-editors/content-picker/manifests.ts`
+* **Settings:**
+  * `filter` - Filter by content type
 
 ### 8. Media Editors
 
-#### [Media Picker](../../../../../model-your-content/property-editors/built-in-umbraco-property-editors/media-picker-3.md)
+#### [Single Media Picker](../../../../../model-your-content/property-editors/built-in-umbraco-property-editors/media-picker-3.md#single-media-picker)
+
+* **Alias:** `Umb.PropertyEditorUi.MediaPicker.Single`
+* **Icon:** `icon-picture`
+* **Group:** `media`
+* **Schema:** `Umbraco.MediaPicker.Single`
+* **Read-only Support:** ✅
+* **Location:** `/packages/media/media/property-editors/media-picker/manifests.ts`
+
+#### [Media Picker](../../../../../model-your-content/property-editors/built-in-umbraco-property-editors/media-picker-3.md#media-picker-multiple)
 
 * **Alias:** `Umb.PropertyEditorUi.MediaPicker`
-* **Icon:** `icon-picture`
+* **Icon:** `icon-pictures`
 * **Group:** `media`
 * **Schema:** `Umbraco.MediaPicker3`
 * **Read-only Support:** ✅
@@ -335,7 +375,7 @@ Property Editor UI manifests define how property editors appear and behave in th
 * **Schema:** `Umbraco.UserPicker`
 * **Location:** `/packages/user/user/property-editor/user-picker/manifests.ts`
 
-#### [Member Picker](../../../../../model-your-content/property-editors/built-in-umbraco-property-editors/member-picker.md)
+#### [Single Member Picker](../../../../../model-your-content/property-editors/built-in-umbraco-property-editors/member-picker.md#single-member-picker)
 
 * **Alias:** `Umb.PropertyEditorUi.MemberPicker`
 * **Icon:** `icon-user`
@@ -343,6 +383,15 @@ Property Editor UI manifests define how property editors appear and behave in th
 * **Schema:** `Umbraco.MemberPicker`
 * **Read-only Support:** ✅
 * **Location:** `/packages/members/member/property-editor/member-picker/manifests.ts`
+
+#### [Member Picker](../../../../../model-your-content/property-editors/built-in-umbraco-property-editors/member-picker.md#member-picker-multiple)
+
+* **Alias:** `Umb.PropertyEditorUi.MemberPicker.Multiple`
+* **Icon:** `icon-users`
+* **Group:** `people`
+* **Schema:** `Umbraco.MemberPicker.Multiple`
+* **Read-only Support:** ✅
+* **Location:** `/packages/members/member/property-editor/multiple-member-picker/manifests.ts`
 
 #### [Member Group Picker](../../../../../model-your-content/property-editors/built-in-umbraco-property-editors/member-group-picker.md)
 
@@ -472,6 +521,7 @@ Each property editor UI manifest follows this structure:
     group: string,        // Category group
     propertyEditorSchemaAlias?: string, // Schema reference
     supportsReadOnly?: boolean,         // Read-only support
+    deprecated?: boolean,               // Hidden from the property editor picker unless already in use
     settings?: {          // Configuration settings
       properties: Array<{
         alias: string,

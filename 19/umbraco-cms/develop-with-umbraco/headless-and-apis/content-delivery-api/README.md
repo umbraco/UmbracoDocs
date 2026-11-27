@@ -197,7 +197,7 @@ Property expansion and limiting allows you to:
 * Include properties from related content or media in the API output for a given content item.
 * Limit the content properties in the API output.
 
-By default, a content property that allows picking a different content item (for example a content picker) outputs a "shallow" representation of the picked item. This means that the output only includes basic information about the picked item, excluding the item properties.
+By default, a content property that allows picking a different content item (for example a Document Picker) outputs a "shallow" representation of the picked item. This means that the output only includes basic information about the picked item, excluding the item properties.
 
 When property expansion is applied to the content property, the properties of the picked item are included in the output. This functionality applies to media items and block editors, as well.
 
@@ -598,8 +598,8 @@ Internal links may be insufficient in a multi-site setup when outputting the Ric
 
 #### Member Picker
 
-The Member Picker property editor is not supported in the Delivery API to avoid the risk of leaking member data.
+The Single Member Picker and Member Picker property editors are not supported in the Delivery API to avoid the risk of leaking member data. Their value is output as `(unsupported)`.
 
-#### Content Picker
+#### Multi Node Tree Picker
 
-The Content Picker property editor is not supported in the Delivery API when configured for Members. This is due to the concern of potentially leaking member data.
+The Multi Node Tree Picker property editor is not supported in the Delivery API when configured for Members. This is due to the concern of potentially leaking member data. Its value is output as `(unsupported)`.

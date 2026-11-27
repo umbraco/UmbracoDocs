@@ -14,10 +14,6 @@ Adds a list of approved colors. The approved colors are added as hex values by u
 
 Displays a list of preset options as a list of checkbox controls. The preset options are added when configuring a Property Editor using the Data Type. Alternatively, the options can also be updated in the **Settings** section under **Data Types**. The value saved is a comma-separated string of IDs.
 
-## Content Picker
-
-The Content Picker opens a modal to pick a specific page from the content structure. The value saved is the selected page's ID.
-
 ## Date Picker
 
 Displays a calendar UI for selecting date and time. The value saved is a standard DateTime value but does not contain time information.
@@ -26,21 +22,13 @@ Displays a calendar UI for selecting date and time. The value saved is a standar
 
 Displays a calendar UI for selecting date and time. The value saved is a standard DateTime value.
 
-## Dropdown
-
-Displays a list of preset options as a list where only a single value can be selected. The default Data Type does not contain any predefined options. The value saved is the selected value as a string.
-
-## Dropdown multiple
-
-Displays a list of preset options as a list where multiple values can be selected. The default Data Type does not contain any predefined options. The value saved is a comma-separated string of IDs.
-
 ## Image Cropper
 
 Allows to upload and crop images by using a focal point. Specific crop definitions can also be added. This Data Type is used by default on the Image Media Type.
 
 ## Image Media Picker
 
-The Image Media Picker opens a modal to pick images from the **Media** tree or images from your Computer. The value saved is the selected media node UDI.
+The Image Media Picker opens a modal to pick multiple images from the **Media** tree or upload images from your computer. The value saved is a JSON array with an entry for each selected image, holding its media key, crops and focal point.
 
 ## Label
 
@@ -69,23 +57,7 @@ This Data Type is used by **Member Types** that is set to display as a Collectio
 
 ## Media Picker
 
-The picker opens a modal to pick a specific media item from the Media tree. The value saved is the selected media node UDI.
-
-## Member Picker
-
-Displays a dropdown with all the available members. A single member can be selected. The value saved is the ID of the member.
-
-## Multi URL Picker
-
-This Data Type allows an editor to add an array of links. These can either be internal Umbraco pages external URLs or links to media in the Media section. The Data Type can be configured by limited number of links it is possible to add.
-
-## Multiple Image Media Picker
-
-The picker opens a modal to pick multiple images from the **Media** tree. The value saved is a comma separated string of media node UDIs.
-
-## Multiple Media Picker
-
-The picker opens a modal to pick multiple media items from the **Media** tree. The value saved is a comma separated string of media node UDIs.
+The Media Picker opens a modal to pick multiple media items from the **Media** tree. The value saved is a JSON array with an entry for each selected media item, holding its media key, crops and focal point.
 
 ## Numeric
 
@@ -100,6 +72,30 @@ This Data type enables editors to choose from a list of radiobuttons.
 A TipTap-based What You See Is What You Get (WYSIWYG) editor. This is the standard editor used to edit a larger amount of text. The editor has a lot of settings, which can be changed on the Richtext editor Data Type in the Settings section.
 
 Learn more about the configuration options in the [Rich Text Editor articles](../../../property-editors/built-in-umbraco-property-editors/rich-text-editor/).
+
+## Select List
+
+Displays a list of preset options where multiple values can be selected. The default Data Type does not contain any predefined options. The value saved is a JSON array of the selected values.
+
+## Single Document Picker
+
+The Single Document Picker opens a modal to pick a specific page from the content structure. The value saved is the selected page's [UDI](../../../../develop-with-umbraco/templating-and-rendering/querying/udi-identifiers.md).
+
+## Single Image Media Picker
+
+The Single Image Media Picker opens a modal to pick a single image from the **Media** tree or upload an image from your computer. The value saved is a JSON array with one entry, holding the media key, crops and focal point of the selected image.
+
+## Single Media Picker
+
+The Single Media Picker opens a modal to pick a single media item from the **Media** tree. The value saved is a JSON array with one entry, holding the media key, crops and focal point of the selected media item.
+
+## Single Member Picker
+
+The Single Member Picker opens a modal to pick a single member. The value saved is the selected member's [UDI](../../../../develop-with-umbraco/templating-and-rendering/querying/udi-identifiers.md).
+
+## Single Select Dropdown
+
+Displays a list of preset options as a dropdown where only a single value can be selected. The default Data Type does not contain any predefined options. The value saved is a JSON array containing the selected value.
 
 ## Tags
 
@@ -116,6 +112,10 @@ A normal HTML input text field.
 ## True/False
 
 A checkbox which saves either 0 or 1, depending on the checkbox being checked or not. A common use is to create a property with the 'umbracoNaviHide' alias and the Data Type True/False. This will provide editors with the option to hide nodes in the navigation menu on the website.
+
+## URL Picker
+
+Allows an editor to add a list of links. These can point to Umbraco pages, external URLs or items in the **Media** section. The number of links can be limited in the Data Type configuration. The value saved is a JSON array of the links.
 
 ## Upload
 
