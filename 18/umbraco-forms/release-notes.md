@@ -354,6 +354,11 @@ Upgrading rebuilds the Examine records index. Values captured before the upgrade
 
 ## Umbraco.Forms.Deploy
 
+### 18.1.0 (November 27th 2026)
+
+* Forms: Fix a stack overflow when restoring or transferring a Forms folder with all items below, if the folder has subfolders
+* All items detailed under release candidates for 18.1.0.
+
 ### 18.1.0-rc1 (November 13th 2026)
 
 #### Permissions for deployed forms
