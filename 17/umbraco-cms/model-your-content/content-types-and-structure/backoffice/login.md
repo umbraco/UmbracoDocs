@@ -124,6 +124,28 @@ The `LoginBackgroundImage`, `LoginLogoImage`, and `LoginLogoImageAlternative` ar
 
 The `LoginLogoImage` is displayed on top of the `LoginBackgroundImage` and the `LoginLogoImageAlternative` is displayed when the `LoginLogoImage` is not available, for example on small resolutions.
 
+## Custom favicon
+
+{% hint style="info" %}
+The `BackOfficeFavicon` setting is available from Umbraco 17.10.
+{% endhint %}
+
+The backoffice and the login screen show the Umbraco favicon by default. To use your own favicon, add the `BackOfficeFavicon` setting to the `"Content"` section in the `appsettings.json` file:
+
+```json
+"Umbraco": {
+    "CMS": {
+      "Content": {
+        "BackOfficeFavicon": "../favicon.ico"
+      }
+   }
+}
+```
+
+The `BackOfficeFavicon` path is referenced from the `/wwwroot/umbraco/` folder. The example above uses the `favicon.ico` file in the root of `wwwroot`.
+
+Browsers cache the favicon for up to a day, so the previous favicon can still show after you change the setting. Clear the browser cache to see the change straight away.
+
 ## Custom CSS
 
 You can also customize the login screen by adding a custom CSS file. To do this, you will need to add a new file inside the `~/App_Plugins` folder, for example `~/App_Plugins/Login/my-custom-login-screen.css`.
