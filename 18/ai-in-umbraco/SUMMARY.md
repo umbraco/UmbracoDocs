@@ -130,6 +130,7 @@
 * [Version History](backoffice/version-history.md)
 * [Audit Logs](backoffice/audit-logs.md)
 * [Usage Analytics](backoffice/usage-analytics.md)
+* [User Permissions](backoffice/user-permissions.md)
 
 ## Testing and Evaluation
 

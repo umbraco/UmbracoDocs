@@ -90,6 +90,17 @@ Any agent in the **AI > Agents** backoffice section that is associated with the 
 
 Unlike Contextual Copilot, where availability also depends on the current section and entity type, Copilot Workspace availability depends only on this surface opt-in. An agent enabled here is available in every conversation and project. If no agent is enabled, the Workspace shows an empty state guiding you to enable one. If multiple agents are enabled, Copilot Workspace can auto-select the most relevant one per prompt, the same way [Auto Mode](../agent-copilot/copilot.md#auto-mode-and-agent-routing) works for Contextual Copilot.
 
+An agent limited to user groups only appears for members of those groups. See [Limiting an Agent to User Groups](../agent/permissions.md#limiting-an-agent-to-user-groups).
+
+A conversation stays readable after its agent is limited to groups you aren't in. What happens when you send a new message depends on how the conversation chose its agent:
+
+- **You picked the agent** - The message is refused with the error "The specified agent is not available to you."
+- **Automatic selection** - The message goes to another agent you can use.
+
+When no agent is available to you at all, the message box shows **No agents available** when you open the conversation.
+
+![A Copilot Workspace chat refusing a new message with the error 'The specified agent is not available to you'. Its agent is now limited to a group the user isn't in](../../.gitbook/assets/copilot-workspace-agent-not-available.png)
+
 ## Related
 
 - [Contextual Copilot](../agent-copilot/copilot.md) - The contextual sidebar, scoped to the item you have open

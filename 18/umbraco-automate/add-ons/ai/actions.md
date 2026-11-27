@@ -19,7 +19,7 @@ When the agent declares a structured-output schema, each output field is exposed
 
 | Setting          | Description |
 | ---------------- | ----------- |
-| Agent            | The agent to run. Only agents scoped to the **Automations** surface are listed. |
+| Agent            | The agent to run. Only agents scoped to the **Automations** surface, and that the service account of the workspace can use, are listed. See [Agent access](#agent-access). |
 | Message          | The message sent to the agent. Supports bindings. |
 | Attachments      | Optional media to send with the message. Supports bindings. See [Attachments](#attachments). |
 | Tool permissions | Whether the agent can make changes. See [Tool permissions](#tool-permissions). |
@@ -58,6 +58,21 @@ The agent's tools act as the service account of the automation's workspace. They
 | List or search content and media, or read media | Any section that shows the content or media tree, such as Content or Media |
 
 Start nodes and permissions are checked on top of the section. For example, the agent can't read or change content outside the account's content start nodes. When the account lacks access, the tool tells the agent so and doesn't return or change the item. Search results the account can't see are left out.
+
+### Agent access
+
+In Umbraco.AI, an agent can be limited to chosen user groups. An automation runs the agent as the service account of its workspace, so that account must be in one of those groups. The groups of the person who builds the automation don't count.
+
+- The **Agent** picker only lists agents the service account can use.
+- Publishing fails when a **Run AI Agent** step uses an agent the service account can't use. The error names the step and the agent.
+- If the agent's groups change after publishing, the step fails at run time. The run shows the reason: `The workspace's service account can't use agent '<alias>'. Add one of its user groups to the agent, or pick another agent.`
+- If the workspace has no service account, the step fails and the agent doesn't run.
+
+<figure><img src="../../.gitbook/assets/run-ai-agent-picker-access.png" alt="The Select Agent panel of the Run AI Agent action, listing only Legal Specialist, the agent the service account of the workspace can use."><figcaption><p>The Agent picker lists only the agents the service account can use.</p></figcaption></figure>
+
+<figure><img src="../../.gitbook/assets/run-ai-agent-publish-access-error.png" alt="The publish error shown when a Run AI Agent step uses an agent the service account of the workspace can't use."><figcaption><p>Publishing an automation with an agent the service account can't use.</p></figcaption></figure>
+
+An agent with no user groups chosen can be used by any service account. See [Limiting an Agent to User Groups](https://docs.umbraco.com/ai-in-umbraco/add-ons/agent/permissions#limiting-an-agent-to-user-groups) in the Umbraco.AI documentation.
 
 ## Transcribe Audio
 
