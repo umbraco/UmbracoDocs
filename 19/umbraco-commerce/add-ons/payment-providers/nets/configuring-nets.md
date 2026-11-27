@@ -9,7 +9,7 @@ description: >-
 
 ## Step 1: Sign up & Sign in
 
-If you haven't done so yet, head on over to the [Nets portal](https://portal.dibspayment.eu/registration) to register for a Nets Easy account.
+If you haven't done so yet, head on over to the [Nets portal](https://portal.dibspayment.eu/) to register for a Nets Easy account.
 
 ![Sign up for Nets Easy on the Nets Portal.](../../../.gitbook/assets/nets-easy_signup.png)
 
@@ -36,7 +36,7 @@ Registration of webhook notifications is handled as part of the payment request 
 The following is an example of such a callback URL:
 
 ```
-https://{store_domain}/umbraco/commerce/payment/callback/nets-easy-checkout/{payment_method_id}/
+https://{store_domain}/umbraco/commerce/payment/api/v1/callback/nets-easy-checkout-onetime/{order_id}/{order_number}/{hash}
 ```
 
 When using this, be sure to replace the parameters in the curly brackets with the corresponding values taken from your store.
